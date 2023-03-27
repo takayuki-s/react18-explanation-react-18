@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { flushSync } from 'react-dom'
 
 const AutoBatchEventHandler = () => {
   console.log('AutoBatchEventHandler')
@@ -7,7 +8,9 @@ const AutoBatchEventHandler = () => {
 
   const onClickUpdateButton = () => {
     console.log(state1)
-    setState1((state1) => state1 + 1)
+    flushSync(() => {
+      setState1((state1) => state1 + 1)
+    })
     console.log(state1) // バッチ処理をしているため、値はまだ更新されていない
     setState2((state2) => state2 + 1)
   }
