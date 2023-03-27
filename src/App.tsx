@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import './App.css'
 import AutoBatchEventHandler from './components/AutoBatchEventHandler'
+import AutoBatchOther from './components/AutoBatchOther'
 
 function App() {
   // console.log('Appレンダリング')
@@ -10,6 +11,7 @@ function App() {
   return (
     <div className="App">
       <AutoBatchEventHandler />
+      <AutoBatchOther />
     </div>
   )
 }

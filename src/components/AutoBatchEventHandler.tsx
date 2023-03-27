@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 const AutoBatchEventHandler = () => {
+  console.log('AutoBatchEventHandler')
   const [state1, setState1] = useState<number>(0)
   const [state2, setState2] = useState<number>(0)
 
