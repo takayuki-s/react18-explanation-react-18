@@ -1,3 +1,5 @@
+import { Avatar } from './Avatar'
+
 type Task = {
   id: number
   title: string
@@ -34,6 +36,11 @@ export const Transition = () => {
   return (
     <div>
       <p>Transition</p>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Avatar>{member.a}</Avatar>
+        <Avatar>{member.b}</Avatar>
+        <Avatar>{member.c}</Avatar>
+      </div>
       {tasks.map((task) => (
         <div
           key={task.id}
