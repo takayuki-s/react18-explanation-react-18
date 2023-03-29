@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, startTransition } from 'react'
 import { Avatar } from './Avatar'
 
 type Task = {
@@ -44,7 +44,9 @@ export const Transition = () => {
 
   const onClickAssignee = (assignee: string) => {
     setSelectedAssignee(assignee)
-    setTaskList(filteringAssignee(assignee))
+    startTransition(() => {
+      setTaskList(filteringAssignee(assignee))
+    })
   }
   return (
     <div>
