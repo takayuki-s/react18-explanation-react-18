@@ -69,6 +69,8 @@ export const Transition = () => {
           {member.c}
         </Avatar>
       </div>
+      <br />
+      <button onClick={() => onClickAssignee('')}>リセット</button>
       {taskList.map((task) => (
         <div
           key={task.id}
