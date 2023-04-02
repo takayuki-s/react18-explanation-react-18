@@ -1,13 +1,15 @@
+import { memo, useDeferredValue } from 'react'
 import type { Task } from './Transition'
 
 type Props = {
   taskList: Task[]
 }
 
-export const TaskList = ({ taskList }: Props) => {
+export const TaskList = memo(({ taskList }: Props) => {
+  const deferredTaskList = useDeferredValue(taskList)
   return (
     <>
-      {taskList.map((task) => (
+      {deferredTaskList.map((task) => (
         <div
           key={task.id}
           style={{
@@ -22,4 +24,4 @@ export const TaskList = ({ taskList }: Props) => {
       ))}
     </>
   )
-}
+})
