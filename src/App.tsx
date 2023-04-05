@@ -1,4 +1,5 @@
 import React, { Suspense, useEffect } from 'react'
+import { ErrorBoundary } from 'react-error-boundary'
 import './App.css'
 import AutoBatchEventHandler from './components/AutoBatchEventHandler'
 import AutoBatchOther from './components/AutoBatchOther'
@@ -17,9 +18,11 @@ function App() {
       <hr />
       <Transition />
       <hr />
-      <Suspense fallback={<p>ロード中</p>}>
-        <ReactQuery />
-      </Suspense>
+      <ErrorBoundary fallback={<p>エラー</p>}>
+        <Suspense fallback={<p>ロード中</p>}>
+          <ReactQuery />
+        </Suspense>
+      </ErrorBoundary>
     </div>
   )
 }
