@@ -12,6 +12,10 @@ export const ReactQuery = () => {
         <ErrorBoundary fallback={<p>Listエラー</p>}>
           <Suspense fallback={<p>Listロード中</p>}>
             <AlbumList />
+          </Suspense>
+        </ErrorBoundary>
+        <ErrorBoundary fallback={<p>Listエラー</p>}>
+          <Suspense fallback={<p>Listロード中</p>}>
             <TodoList />
           </Suspense>
         </ErrorBoundary>
